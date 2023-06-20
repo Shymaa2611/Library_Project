@@ -1,0 +1,34 @@
+{% extends 'base.html'%}
+{% load static %}
+    {%block content%}
+    <div class="right_main">
+    <div  class="about padd_rl30">
+        <div class="container">
+         <div class="row">
+           <div class="col-md-12">
+             <div class="titlepage text_align_left">
+               <h2>About <span>Us</span></h2>
+               <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration i</p>
+             </div>
+           </div>
+         </div>
+         <div class="row">
+              <div class="col-lg-8">
+                 <div class="about_text text_align_left">
+                       <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomisedThere are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomisedThere are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised</p>
+                      <a class="read_more" href="{% url 'about'%}">Read More</a>
+                 </div>
+              </div>
+              <div class="col-lg-4">
+                 <div class="about_img">
+                    <figure><img class="img_responsive" src="{% static 'images/about1.png' %}" alt="#"/></figure>
+                 </div>
+              </div>
+           </div>
+        </div>
+     </div>
+    {% endblock content%}
+    <!-- end about -->
+   
+    <!-- footer -->
+   

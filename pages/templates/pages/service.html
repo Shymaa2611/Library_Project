@@ -1,0 +1,38 @@
+{% extends 'base.html'%}
+{% load static %}
+{%block content%}
+<div class="right_main">
+      
+    <!-- end slider section -->
+     <!-- services -->
+    <div class="services padd_rl30">
+       <div class="container">
+          <div class="row">
+             <div class="col-md-12">
+                <div class="titlepage text_align_left">
+                   <h2>Our <span> services</span></h2>
+                   <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration i</p>
+                </div>
+             </div>
+          </div>
+                <div class="row">
+                  {% for s in service %}
+                   <div class="col-lg-4">
+                   
+                      <div class="services_text">
+                          <i><img src="{{s.image.url}}" alt="#"/></i>
+                          <h3>{{s.title}}</h3>
+                          <p>{{s.desceiption}} </p>
+                          </div>
+                       
+                         <a class="read_more" href="services.html">Read More</a>
+                        
+                   </div>
+                   {%endfor%}
+                  
+                </div>
+              
+            
+             </div>
+          </div>
+{% endblock content%}

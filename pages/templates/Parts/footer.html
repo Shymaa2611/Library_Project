@@ -1,0 +1,63 @@
+{%load static%}
+<footer>
+    <div class="footer padd_rl30">
+       <div class="container">
+          <div class="row">
+           
+             <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="Informa helpful">
+                   <h3>Menu</h3>
+                   <ul>
+                      <li><a href="{% url 'index'%}">Home</a></li>
+                      <li><a href="{% url 'about'%}">About</a></li>
+                      <li><a href="{% url 'service'%}">Service</a></li>
+                      <li><a href="{% url 'blog'%}">Blog</a></li>
+                      <li><a href="{% url 'contact'%}">Contact</a></li>
+                   </ul>
+                </div>
+             </div>
+             <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="Informa conta">
+                   <h3>Location</h3>
+                   <ul>
+                      <li> <img src="{% static 'images/loc.png' %}" alt="#"/> {{data.location}}</li>
+                      <li> <a href="Javascript:void(0)"><img src="{% static 'images/call.png' %}" alt="#"/> ( +{{data.phone}})</a></li>
+                      <li> <a href="Javascript:void(0)"> <img src="{% static 'images/mail.png' %}" alt="#"/> {{data.email}}</a></li>
+                   </ul>
+                </div>
+             </div>
+            
+             <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="Informa conta">
+                   <h3>Social Link</h3>
+                  <ul class="social_icon text_align_center">
+                   <li> <a href="data.facebook "><i class="fa fa-facebook-f"></i></a></li>
+                   <li> <a href="data.facebook "><i class="fa fa-twitter"></i></a></li>
+                   <li> <a href="data.linkin"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+                   <li> <a href="data.instgram "><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                </ul>
+                </div>
+               
+             </div>
+              <div class="col-lg-3 col-md-6 col-sm-6">
+                 <div class="Informa helpful">
+                   <h3>Newsletter</h3>
+                    <form class="newslatter_form">
+                   <input class="ente" placeholder="Enter Your email" type="text" name="Enter your email">
+                   <button class="subs_btn">Subscribe</button>
+                </form>
+                </div>
+             </div>
+          </div>
+       </div>
+       <div class="copyright text_align_center">
+          <div class="container">
+             <div class="row">
+                <div class="col-md-10 offset-md-1">
+                   <p>© 2022 All Rights Reserved. Design by  <a href="https://html.design/"> Free Html Template</a></p>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+ </footer>
