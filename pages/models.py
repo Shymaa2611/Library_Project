@@ -22,3 +22,7 @@ class services(models.Model):
    desceiption=models.TextField()
    def __str__(self):
       return self.title
+class Locations(models.Model):
+   title=models.CharField(max_length=200)
+   image=models.ImageField()
+   desceiption=models.TextField()

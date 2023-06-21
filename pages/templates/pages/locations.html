@@ -1,48 +1,31 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content%}
-<div class="locations padd_rl30">
-   <div class="container" >
-      <div class="row">
-         <div class="col-md-12">
-            <div class="titlepage text_align_left">
-               <h2>Locations</h2>
+<div class="right_main">
+
+   <div class="locations padd_rl30">
+      <div class="container">
+         <div class="row">
+            <div class="col-md-12">
+               <div class="titlepage text_align_left">
+                  <h2>Locations</h2>
+               </div>
             </div>
          </div>
-      </div>
-      <div class="row">
-         <div class="col-lg-4">
-            <div class="bearch text_align_left">
-              <figure><img src="{% static 'images/loca.jpg' %}" alt="#"/></figure>
-              <div class="city">
-              <h3>City wedding</h3>
-              <p>Eum iriure dolor in hendrerit in vulputate velit esse molestie con sequat, vel illum dolore eu </p>
-              </div>
+         <div class="row">
+          {% for l in location%}
+            <div class="col-lg-4">
+               <div class="bearch text_align_left">
+                 <figure><img src="{{l.image.url}}" alt="#"/></figure>
+                 <div class="city">
+                 <h3>{{l.title}}</h3>
+                 <p>{{l.desceiption}}</p>
+                 </div>
+               </div>
+               <a class="read_more" href="{% url 'locations' %}">Read More</a>
             </div>
-            <a class="read_more" href="locations.html">Read More</a>
-         </div>
-         <div class="col-lg-4">
-            <div class="bearch text_align_left">
-              <figure><img src="{% static 'images/loca1.jpg' %}" alt="#"/></figure>
-              <div class="city">
-              <h3>Beach wedding</h3>
-              <p>Eum iriure dolor in hendrerit in vulputate velit esse molestie con sequat, vel illum dolore eu </p>
-              </div>
-            </div>
-            <a class="read_more" href="locations.html">Read More</a>
-         </div>
-         <div class="col-lg-4">
-            <div class="bearch text_align_left">
-              <figure><img src="{% static 'images/loca2.jpg' %}" alt="#"/></figure>
-              <div class="city">
-              <h3>Country wedding</h3>
-              <p>Eum iriure dolor in hendrerit in vulputate velit esse molestie con sequat, vel illum dolore eu </p>
-              </div>
-            </div>
-            <a class="read_more" href="locations.html">Read More</a>
-         </div>
-      </div>
-      </div>
+            {%endfor%}
+  
    
           {% endblock content%}
  

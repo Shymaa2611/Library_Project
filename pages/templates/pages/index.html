@@ -9,43 +9,35 @@
 
 {% block content%}
 <div class="services padd_rl30">
-  <div class="container">
-     <div class="row">
-        <div class="col-md-12">
-           <div class="titlepage text_align_left">
-              <h2>Our <span> services</span></h2>
-              <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration i</p>
-           </div>
-        </div>
-     </div>
-           <div class="row">
-              <div class="col-lg-4">
-                 <div class="services_text">
-                     <i><img src="{% static 'images/service1.png' %}" alt="#"/></i>
-                     <h3>Wedding menu</h3>
-                     <p>Eum iriure dolor in hendrerit in vulputate velit esse molestie con sequat, vel illum dolore eu </p>
-                     </div>
-                    <a class="read_more" href="services.html">Read More</a>
-              </div>
-              <div class="col-lg-4">
-                 <div class="services_text">
-                     <i><img src="{% static 'images/service2.png' %}" alt="#"/></i>
-                     <h3>Honeymoon ideas</h3>
-                     <p>Eum iriure dolor in hendrerit in vulputate velit esse molestie con sequat, vel illum dolore eu </p>
-                     </div>
-                    <a class="read_more" href="services.html">Read More</a>
-              </div>
-              <div class="col-lg-4">
-                 <div class="services_text">
-                     <i><img src="{% static 'images/service3.png' %}" alt="#"/></i>
-                     <h3>Gift ideas</h3>
-                     <p>Eum iriure dolor in hendrerit in vulputate velit esse molestie con sequat, vel illum dolore eu </p>
-                     </div>
-                    <a class="read_more" href="services.html">Read More</a>
-              </div>
-           </div>
-        </div>
-     </div>
+   <div class="container">
+      <div class="row">
+         <div class="col-md-12">
+            <div class="titlepage text_align_left">
+               <h2>Our <span> services</span></h2>
+               <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration i</p>
+            </div>
+         </div>
+      </div>
+            <div class="row">
+              {% for s in service %}
+               <div class="col-lg-4">
+               
+                  <div class="services_text">
+                      <i><img src="{{s.image.url}}" alt="#"/></i>
+                      <h3>{{s.title}}</h3>
+                      <p>{{s.desceiption}} </p>
+                      </div>
+                   
+                     <a class="read_more" href="services.html">Read More</a>
+                    
+               </div>
+               {%endfor%}
+              
+            </div>
+          
+        
+         </div>
+      </div>
 <!-- end services -->
 <!-- about -->
 <div  class="about padd_rl30">
@@ -85,36 +77,18 @@
         </div>
      </div>
      <div class="row">
+      {% for l in location%}
         <div class="col-lg-4">
            <div class="bearch text_align_left">
-             <figure><img src="{% static 'images/loca.jpg' %}" alt="#"/></figure>
+             <figure><img src="{{l.image.url}}" alt="#"/></figure>
              <div class="city">
-             <h3>City wedding</h3>
-             <p>Eum iriure dolor in hendrerit in vulputate velit esse molestie con sequat, vel illum dolore eu </p>
+             <h3>{{l.title}}</h3>
+             <p>{{l.desceiption}}</p>
              </div>
            </div>
-           <a class="read_more" href="locations.html">Read More</a>
+           <a class="read_more" href="{% url 'locations' %}">Read More</a>
         </div>
-        <div class="col-lg-4">
-           <div class="bearch text_align_left">
-             <figure><img src="{% static 'images/loca1.jpg' %}" alt="#"/></figure>
-             <div class="city">
-             <h3>Beach wedding</h3>
-             <p>Eum iriure dolor in hendrerit in vulputate velit esse molestie con sequat, vel illum dolore eu </p>
-             </div>
-           </div>
-           <a class="read_more" href="locations.html">Read More</a>
-        </div>
-        <div class="col-lg-4">
-           <div class="bearch text_align_left">
-             <figure><img src="{% static 'images/loca2.jpg' %}" alt="#"/></figure>
-             <div class="city">
-             <h3>Country wedding</h3>
-             <p>Eum iriure dolor in hendrerit in vulputate velit esse molestie con sequat, vel illum dolore eu </p>
-             </div>
-           </div>
-           <a class="read_more" href="locations.html">Read More</a>
-        </div>
+        {%endfor%}
      </div>
   </div>
 </div>

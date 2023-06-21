@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from .forms import ContactForm
-from .models import client_data,company,services
+from .models import client_data,company,services,Locations
 
 def index(request):
   data=ContactForm()
@@ -12,6 +12,8 @@ def index(request):
       
   context={
       'data':company.objects.all(),
+      'service':services.objects.all(),
+      'location':Locations.objects.all(),
       'form':ContactForm()
    }
 
@@ -46,7 +48,10 @@ def service(request):
   return render(request,'pages/service.html',context)
 
 def locations(request):
-  return render(request,'pages/locations.html')
+  context={
+    'location':Locations.objects.all()
+  }
+  return render(request,'pages/locations.html',context)
 
 
 
