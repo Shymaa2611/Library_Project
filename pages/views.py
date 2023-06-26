@@ -41,6 +41,7 @@ def contact(request):
    }
 
   return render(request,'pages/contact.html',context)
+
 def service(request):
   context={
     'service':services.objects.all()
